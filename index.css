@@ -1,0 +1,21 @@
+body a{
+    text-decoration: none; 
+}
+
+header h1{
+    display: flex;
+    font-family: 'Cinzel', serif;
+    justify-content: center;
+}
+
+.menu{
+    display: flex;       
+    justify-content: space-around;      
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+
+.menu a {
+    display:block; 
+}
