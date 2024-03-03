@@ -1,0 +1,216 @@
+body{
+    background-color: #5666bf;  /* Couleur du body */
+    position: relative;           /* Position relative pour le menu */
+    height: 100vh;                /* Hauteur du body */
+    margin: 0;                    /*Supression des marges et du padding du body */
+    padding: 0;
+}
+
+body a{
+    text-decoration: none; /* Suppression du soulignement des liens */
+}
+
+h1 {
+    margin: 0; /* Suppression des marges du h1 */
+}
+
+header h1{  /* Style du titre de la page */
+    display: flex;
+    font-family: 'Cinzel', serif;
+    justify-content: center;
+    background-color: #3e2c71;
+    margin-bottom: 0;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    color : #F3B93F;
+}
+
+.menu{  /* Style du menu */
+    display: flex;
+    flex-direction: column;         /* définition du menu en colonne */
+    align-items: center;
+    margin-bottom: 2%;
+    position: fixed;                /* Position fixe pour le menu afin de le voir sur toute la page lorsqu'il est ouvert*/
+    top: 0;                         /* Positionnement du menu en haut de la page */
+    left: -250px;                   /* Positionnement du menu en dehors de la page (lorsqu'il est fermé)*/
+    width: 250px;                   /* Largeur du menu */
+    height: 100vh;
+    background-color: #6643b5; 
+    transition: left 0.3s ease;     /* Transition pour l'ouverture et la fermeture du menu */
+}
+
+.menu #container{                /* Style du contenu du menu */
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+    font-size: large;
+    text-align: center;
+}
+
+.menu #container:hover{        /* Style du contenu du menu lorsqu'on le survol */
+    background-color: #32294de3;
+}
+
+.menu p{                   /* Style des paragraphes du menu (ici juste le titre)*/
+    color: #F3B93F;
+    font-size: large;
+    padding-top: 21%;
+    width: 100%;
+    padding-bottom: 16.5%;
+    background-color: #46386b;
+    margin: 0;
+    text-align: center;
+}
+
+.menu.show a{           /* Style des liens du menu lorsqu'il est ouvert */
+    color: #F3B93F;
+}
+
+.menu.show {        /* Positionnement du menu lorsqu'il est ouvert */
+    left: 0;
+}
+.menu.show #icone_menu{ /* Positionnement de l'icone du menu lorsqu'il est ouvert */
+    left: 260px;
+}
+
+#icone_menu{    /* Style de l'icone du menu */
+    position: fixed;    /* Position fixe pour l'icone afin de le voir sur toute la page lorsqu'il est ouvert*/
+    width: 75px;
+    height: 75px;
+    top: 10px;
+    left: 10px;
+    z-index: 2; /* Positionnement de l'icone au dessus du menu */
+}
+
+#icone_menu img{    /* Dimensions de l'image de l'icone du menu */
+    width: 75px;
+    height: 75px;
+}
+
+#titre{   /* Style du titre de la page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 200%;
+}
+
+#filtre{    /* Style de la classe "filtre" (ici juste un paragraphe) */
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    font-size: 150%;
+}
+
+#boutonContainer{   /* Style des boutons */
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+#cardContainer{  /* Style du "container" des cartes (l'espace où les cartes seront affichées) */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 7%;
+    background-color: #4d35c4;
+    border: 2px solid #231ea5;
+}
+
+.deck { /* Style des cartes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    margin-top: 5%;
+    position: relative;
+}
+
+.deck .seeProfil{   /* Style du bouton "voir le profil" */
+    position: absolute; /* Positionnement du bouton "voir le profil" */
+    bottom: 10.5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: #F3B93F;
+    font-size: 20px;
+    text-align:center;
+    display: none;  /* Le bouton "voir le profil" est caché par défaut */
+}
+
+.deck:hover .seeProfil{ /* Style du bouton "voir le profil" lorsqu'on survol la carte */
+    display: block;
+    background-color: #3e2c71;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.deck:hover .seeProfil a{   /* Style du lien du bouton "voir le profil" lorsqu'on survol la carte */
+    display: flex;
+    color: #F3B93F;
+    transform: scale(0.909);    /* Taille du lien du bouton "voir le profil" lorsqu'on survol la carte. Ici on le scale a 0.909 car sinon il se fait aussi scale à 1.1 (0.909 est l'opposé de 1.1) */
+}
+.deck img{  /* Dimensions des images des cartes */
+    width: 250px;
+    height: 350px;
+}
+
+.deck img:hover{    /* Aggrandissement des images des cartes lorsqu'on les survol et réduction de leur opacité afin de montrer le personnage ciblé */
+    opacity: 90%;
+    transform: scale(1.1);
+}
+
+.deck h2{
+    margin-top: 10%;
+}
+
+/* A partir de là, c'est le style des cartes triées. Le fonctionnement est le même que lorsqu'elles ne le sont pas. */
+
+.triDeck {  /* Style des cartes triées */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    margin-top: 5%;
+    position: relative;
+}
+
+.triDeck .seeProfil{    /* Style du bouton "voir le profil" */
+    position: absolute;
+    bottom: 10.5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: #F3B93F;
+    font-size: 20px;
+    text-align:center;
+    display: none;
+}
+
+.triDeck:hover .seeProfil{  /* Style du bouton "voir le profil" lorsqu'on survol la carte */
+    display: block;
+    background-color: #3e2c71;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.triDeck:hover .seeProfil a{    /* Style du lien du bouton "voir le profil" lorsqu'on survol la carte */
+    display: flex;
+    color: #F3B93F;
+    transform: scale(0.909);
+}
+
+.triDeck img{   /* Dimensions des images des cartes */
+    width: 250px;
+    height: 350px;
+}
+
+.triDeck img:hover{ /* Aggrandissement des images des cartes lorsqu'on les survol et réduction de leur opacité afin de montrer le personnage ciblé */
+    opacity: 90%;
+    transform: scale(1.1);
+}
+
+.triDeck h2{
+    margin-top: 10%;
+}
